@@ -57,17 +57,10 @@ def TRAVERSABLE(X,obs):
     x_nearest = Nearest(obs,X)
     dist = distance(x_nearest,X)
 
-    m = float(X[1]-x_nearest[1])/(X[0]-x_nearest[0])
-    c = X[1]-X[0]*m 
-
-    # y = mx +c --> mx -y + c =0
-    perp_dis = shortest_distance(X[0],X[1],m,-1,c)
-
-    
     if X in obs:
         return False
-    elif dist <= 0.25 :
-        return False
+    #elif dist <= 0.25 :
+    #    return False
     else:
         return True
 
@@ -104,30 +97,18 @@ def RRT(start, goal,obst):
     graph.append(start)
     
     #for x in range(100):
-    for a in range(100):
+    for a in range(500):
         Xnew = genNewConfig(goal)
 
         if TRAVERSABLE(Xnew,obst)==False:
             continue
         
-        last_pt = graph[-1]
-
-        m = float(Xnew[1]-last_pt[1])/(Xnew[0]-last_pt[0])
-        c = Xnew[1]-Xnew[0]*m 
-
-        # y = mx +c --> mx -y + c =0
+    
         x_nearest = Nearest(graph,Xnew)
 
-        perp_dis = shortest_distance(x_nearest[0],x_nearest[1],m,-1,c)
-
-        if perp_dis <= 0.25:
-           #continue
-           pass
-
-
         
-
-        if (Xnew[0]>x_nearest[0]) and (Xnew[1] > x_nearest[1]):
+        
+        if (Xnew[0]>=x_nearest[0]) and (Xnew[1] >= x_nearest[1]):
             join(x_nearest,Xnew)
             graph.append(Xnew)
                 
@@ -135,22 +116,23 @@ def RRT(start, goal,obst):
 
         #RRT(x_nearest,goal,obst)
 
-       
-
-
-
-        if Xnew in goal:
+        if Xnew in [goal]:
             plt.show(block=True)
-            break
+            graph.append(Xnew)
+            #return graph
+            
     #if distance(Xnew,goal)<distance(Xnew,x_nearest):
         #join(Xnew,goal)
             
     plt.grid()
     plt.show(block=True)
+    return graph
 
 
 
-S = [0,0]
-G = [3,4]
+"""S = [0,0]
+G = [5,5]
 
-RRT(S,G,obstacles) 
+path = RRT(S,G,obstacles) 
+
+print (path)"""

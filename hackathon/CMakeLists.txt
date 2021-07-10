@@ -161,7 +161,6 @@ include_directories(
 catkin_install_python(PROGRAMS
   scripts/vel_pub.py
   scripts/obstacles.py
-  scripts/RRT_test.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
