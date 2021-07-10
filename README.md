@@ -1,6 +1,6 @@
 # ROS
 
-Contains code for the ROS-Hackathon written by Divith Mahajan (2020B3PS1513G).
+Contains code for the ROS-Hackathon.
 
 Place the "hackathon" folder in the ```~/catkin_ws/src``` directory and give necessary permissions to executables.
 
