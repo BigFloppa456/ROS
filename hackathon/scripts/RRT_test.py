@@ -117,15 +117,15 @@ def RRT(start, goal,obst):
         #RRT(x_nearest,goal,obst)
 
         if Xnew in [goal]:
-            plt.show(block=True)
+            #plt.show(block=True)
             graph.append(Xnew)
             #return graph
             
     #if distance(Xnew,goal)<distance(Xnew,x_nearest):
         #join(Xnew,goal)
             
-    plt.grid()
-    plt.show(block=True)
+    #plt.grid()
+    #plt.show(block=True)
     return graph
 
 

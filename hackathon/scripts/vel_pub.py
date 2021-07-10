@@ -8,8 +8,8 @@ from hackathon.msg import centre
 def func(msg):
     for i in range(len(msg.x)):
 
-        move.linear.x = msg.x[i][0]
-        move.linear.y = msg.y[i][1]
+        move.linear.x = msg.x[i]
+        move.linear.y = msg.y[i]
         
         
         rate=rospy.Rate(2)

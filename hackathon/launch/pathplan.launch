@@ -1,0 +1,5 @@
+<launch>
+<node name="obstacles" pkg="hackathon" type="obstacles.py" output="screen"></node>
+<node name="path" pkg="hackathon" type="planner.py" output="screen"></node>
+<node name="vel_pub" pkg="hackathon" type="vel_pub.py" output="screen"></node>
+</launch>
