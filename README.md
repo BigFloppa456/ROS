@@ -8,11 +8,3 @@ To launch all the programs, use the command
 ```
 roslaunch hackathon pathplan.launch
 ```
-Permissions to be given to:
-1) In ```launch``` directory: 
-    ```pathplan.launch```
-2) In ```scripts``` directory:
-      a)  ```obstacles.py```
-      b)  ```planner.py```
-      c)  ```vel_pub.py```
-      d)  ```RRT_test.py``` 
